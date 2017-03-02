@@ -1,25 +1,9 @@
-
-
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
 .navbar-default {
     background-color: #c5cc0c;
     border-color: #E7E7E7;
-}
-
-#logo {
-  float: left;
-  font-size: 1.7em;
-  color: #bbb;
-  text-transform: uppercase;
-  letter-spacing: -1px;
-  font-weight: bold;
-}
-
-#logo:hover {
-  color: #fff;
-  text-decoration: none;
 }
 
 .center {
@@ -31,6 +15,20 @@
   background-size: cover;
   height: 300px;
 }
+
+#logo {
+  float: left;
+  font-size: 1.7em;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  font-weight: bold;
+}
+  
+#logo:hover {
+  color: #fff;
+  text-decoration: none;
+}  
 
 .jumbotron h1 {
   color: #fff;
@@ -48,10 +46,131 @@
   font-weight: bold;
 }
 
+.btn-xlarge {
+  background-color: #073B15;
+}
+
+.btn-xlarge:hover {
+  color: #fff;
+  text-decoration: none;
+}
+
+body {
+  height: 100%;
+}
+
+footer {
+  margin-top: 45px;
+  padding-top: 5px;
+  border-top: 1px solid #eaeaea;
+  color: #777;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+
+footer a {
+  color: #555;
+}
+
+footer a:hover {
+  color: #222;
+}
+
+footer small {
+  float: left;
+}
+
+footer ul {
+  float: right;
+  list-style: none;
+}
+
+footer ul li {
+  float: left;
+  margin-left: 15px;
+}
+
+.description {
+  margin-top: 0;
+}
+
+.well a {
+  color: #073B15;
+}
+
 .chef_info {
   margin-top: 10px;
 }
 
 .colormatch a {
   color: #073B15;
+}
+
+.recipe-actions {
+  padding-top: 5px;
+  a {
+    color: #fff;
+  }
+}
+
+.listing {
+  list-style: none;
+  padding-left: 0;
+}
+
+.chef-title {
+  color: #073B15;
+  font-weight: bold;
+  font-size: 1.25em;
+}
+
+.input_checkbox input {
+  width: auto !important;
+}
+
+.center-block {
+  float: none;
+}
+
+.chat-container {
+  bottom: 0;
+  left: 0;
+  right: 0;
+  top: 150px;
+  width: 80;
+}
+
+.message-container {
+  .form-control {
+    float: left;
+    width: 80%;
+  }
+  .btn {
+    float: right;
+    position: relative;
+    height: 54px !important;
+    width: 18%;
+  }
+}
+
+.message {
+  padding-left: 5px;
+  padding-top: 10px;
+}
+
+.messages {
+  border: 1px solid #eaeaea;
+  height: 16em;
+  position: relative;
+  overflow: auto;
+}
+
+.liking {
+  padding-right: 10px;
+}
+
+.small-image {
+  max-width: 25px;
+  height: auto;
 }
