@@ -6,5 +6,7 @@ class Recipe < ApplicationRecord
 
   belongs_to :chef
   default_scope -> { order(updated_at: :desc)}
+  has_many :recipe_ingredients
+  has_many :ingredients, through: :recipe_ingredients
 
 end
