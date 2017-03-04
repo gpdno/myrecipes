@@ -56,7 +56,7 @@ private
   end
 
   def require_same_user
-    if current_chef != @recipe.chef
+    if current_chef != @recipe.chef and !current_chef.admin?
       flash[:danger] = "You must be logged in as that user"
       redirect_to recipes_path
     end

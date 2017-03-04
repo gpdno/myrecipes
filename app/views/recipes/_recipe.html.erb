@@ -12,7 +12,7 @@
         <span class="quiet"><small>Created 
         <%= time_ago_in_words(recipe.created_at) %> ago</small></span>
       </p>
-      <% if logged_in? && current_chef == recipe.chef %>
+      <% if logged_in? && (current_chef == recipe.chef || current_chef.admin?) %>
         <div class="recipe-actions">
           <%= link_to "Edit this recipe", 
                       edit_recipe_path(recipe), 
