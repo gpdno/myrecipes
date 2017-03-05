@@ -19,6 +19,11 @@
           <%= f.text_area :description, rows: 10, class: "form-control", placeholder: "Enter the steps to create the recipe" %>
         </div>
       </div>
+      <div class="row">
+        <div class="col-md-offset-2 col-md-8">
+          <%= f.collection_select(:ingredient_ids, Ingredient.all, :id, :name, {}, {:multiple => true} ) %>
+        </div>
+      </div>
       <div class="form-group">
         <div class="col-md-offset-2 col-md-10">
           <%= f.submit class: "btn btn-primary btn-lg" %>
