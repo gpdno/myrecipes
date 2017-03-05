@@ -8,6 +8,8 @@
   <% if @recipe.ingredients.any? %>
     <p>Ingredients: <%= render @recipe.ingredients %></p>
   <% end %>
+  <hr />
+  <%= simple_format(@recipe.steps) %>
   <div class="pull-right">
     <p class="center">
       <em>Created by:</em>

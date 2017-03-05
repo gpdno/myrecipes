@@ -16,12 +16,21 @@
           <%= f.label :description %>
         </div>
         <div class="col-md-8">
-          <%= f.text_area :description, rows: 10, class: "form-control", placeholder: "Enter the steps to create the recipe" %>
+          <%= f.text_area :description, rows: 3, class: "form-control", placeholder: "Brief description of the recipe" %>
         </div>
       </div>
-      <div class="row">
-        <div class="col-md-offset-2 col-md-8">
+      <div class="form-group">
+      <div class="control-label col-md-2">
+          <%= f.label :Ingredients %>
+        </div>
+        <div class="col-md-1">
           <%= f.collection_select(:ingredient_ids, Ingredient.all, :id, :name, {}, {:multiple => true} ) %>
+        </div>
+        <div class="control-label col-md-1">
+          <%= f.label :steps %>
+        </div>
+        <div class="col-md-6">
+          <%= f.text_area :steps, rows: 5, class: "form-control", placeholder: "Steps to create the recipe" %>
         </div>
       </div>
       <div class="form-group">
