@@ -22,8 +22,8 @@
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Recipes <span class="caret"></span></a>
                 <ul class="dropdown-menu">
                   <li class="dropdown-header">All Recipies</li>
-                  <li><%= link_to "In Order (A-Z)", recipes_path %></li>
-                  <li><%= link_to "In Order by Likes", recipes_path %></li>
+                  <li><%= link_to "In Order (A-Z)", recipes_path, :obj => @recipe %></li>
+                  <li><%= link_to "In Order by Likes", recipes_path, :obj => @recipe_like %></li>
                   <li><%= link_to "In Order by Chefs", recipes_path %></li>
                   <li role="separator" class="divider"></li>
                   <li><%= link_to "New Recipe", new_recipe_path %></li>
