@@ -15,6 +15,20 @@
         <span class="quiet"><small>Created 
         <%= time_ago_in_words(recipe.created_at) %> ago by <%= recipe.chef.chefname.capitalize %> | <%= pluralize(recipe.comments.count, 'Comment') %></small></span>
       </p>
+
+  <div class="center">
+    <%= link_to like_recipe_path(recipe, like: true), method: :post do %>
+      <i class="glyphicon glyphicon-thumbs-up"></i>
+      <%= recipe.thumbs_up_sum %>
+    <% end %> 
+    &nbsp
+    &nbsp
+    <%= link_to like_recipe_path(recipe, like: false), method: :post do %>
+      <i class="glyphicon glyphicon-thumbs-down"></i>
+      <%= recipe.thumbs_down_sum %>
+    <% end %> 
+  </div>
+
       <% if logged_in? && (current_chef == recipe.chef || current_chef.admin?) %>
         <div class="recipe-actions">
           <%= link_to "Edit this recipe", 

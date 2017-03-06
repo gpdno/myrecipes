@@ -63,14 +63,14 @@ body {
 }
 
 .btn-primary {
-    background: $color-primary-0;
-    border-color: $color-primary-0;
+    background: $color-primary-2;
+    border-color: $color-primary-2;
     color: $color-font-default;
 }
 
 .btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open > .dropdown-toggle.btn-primary {
-    background: $color-primary-2;
-    border-color: $color-primary-2;
+    background: $color-primary-1;
+    border-color: $color-primary-1;
     color: #333;
 }
 

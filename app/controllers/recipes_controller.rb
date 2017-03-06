@@ -1,10 +1,12 @@
 class RecipesController < ApplicationController
-  before_action :set_recipe, only: [:show, :edit, :update, :destroy]
-  before_action :require_user, except: [:index, :show]
+  before_action :set_recipe, only: [:show, :edit, :update, :destroy, :like]
+  before_action :require_user, except: [:index, :show, :like]
   before_action :require_same_user, only: [:edit, :update, :destroy]
+  before_action :require_like_login, only: [:like]
 
   def index
     @recipes = Recipe.paginate(page: params[:page], per_page: 5)
+    @recipes_likes = Recipe.all.sort_by{|likes| likes.thumbs_up_sum}.reverse.paginate(page: params[:page], per_page: 5)
   end
 
   def show
@@ -44,10 +46,19 @@ class RecipesController < ApplicationController
     flash[:success] = "The recipe was successfully deleted"
     redirect_to recipes_path
   end
-  
-end
 
-private
+  def like
+    like = Like.create(like: params[:like], chef: current_chef, recipe: @recipe)
+    if like.valid?
+      flash[:success] = "Your choice was succesful"
+      redirect_to :back
+    else
+      flash[:danger] = "You can only like/dislike a recipe once"
+      redirect_to :back
+    end
+  end
+
+  private
 
   def recipe_params
     params.require(:recipe).permit(:name, :description, :steps, ingredient_ids: [])
@@ -63,3 +74,11 @@ private
       redirect_to recipes_path
     end
   end
+
+  def require_like_login
+    if !logged_in?
+      flash[:danger] = "You must be logged in to perform that action"
+      redirect_to :back
+    end
+  end
+end

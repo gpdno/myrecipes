@@ -30,6 +30,18 @@
                                 class: "btn btn-xs btn-danger"%>
   <% end %>
   </div>
+  <div class="center">
+    <%= link_to like_recipe_path(@recipe, like: true), method: :post do %>
+      <i class="glyphicon glyphicon-thumbs-up"></i>
+      <%= @recipe.thumbs_up_sum %>
+    <% end %> 
+    &nbsp
+    &nbsp
+    <%= link_to like_recipe_path(@recipe, like: false), method: :post do %>
+      <i class="glyphicon glyphicon-thumbs-down"></i>
+      <%= @recipe.thumbs_down_sum %>
+    <% end %> 
+  </div>
 </div>
 <div class="col-md-8 col-md-offset-5 colormatch">
   [ <%= link_to "Return to main recipes", recipes_path %> ]
