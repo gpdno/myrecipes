@@ -16,6 +16,9 @@
           <ul class="nav navbar-nav">
             <li><a href="#about">About</a></li>
             <li><a href="#contact">Contact</a></li>
+            <% if logged_in? %>
+            <li><%= link_to "Chefs Chat", chat_path %></li>
+            <% end %>
             <li><%= link_to "All Chefs", chefs_path %></li>
             <% if logged_in? %>
               <li class="dropdown">
