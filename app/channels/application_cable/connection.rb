@@ -1,6 +1,6 @@
 module ApplicationCable
   class Connection < ActionCable::Connection::Base
-    identify_by :current_chef
+    identified_by :current_chef
 
     def connect
       self.current_chef = find_current_user
