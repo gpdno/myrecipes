@@ -20,22 +20,24 @@
             <li><%= link_to "Chefs Chat", chat_path %></li>
             <% end %>
             <li><%= link_to "All Chefs", chefs_path %></li>
-            <% if logged_in? %>
+            
               <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Recipes <span class="caret"></span></a>
                 <ul class="dropdown-menu">
                   <li class="dropdown-header">All Recipies</li>
                   <li><%= link_to "In Order (A-Z)", recipes_path, :obj => @recipe %></li>
-                  <li><%= link_to "In Order by Likes", recipes_path, :obj => @recipe_like %></li>
-                  <li><%= link_to "In Order by Chefs", recipes_path %></li>
+                  <li><%= link_to "In Order by Likes", recipes_by_likes_path, :obj => @recipe %></li>
+                  <li><%= link_to "In Order by Chefs", recipes_by_chefs_path, :obj => @recipe %></li>
+                  <% if logged_in? %>
                   <li role="separator" class="divider"></li>
                   <li><%= link_to "New Recipe", new_recipe_path %></li>
                   <li><a href="#">One more separated link</a></li>
+                  <% else %>
+                  <li></li>
+                  <% end %>
                 </ul>
               </li>
-            <% else %>
-              <li><%= link_to "All Recipe", recipes_path %></li>
-            <% end %>
+            
             <% if logged_in? %>
               <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Ingredients <span class="caret"></span></a>

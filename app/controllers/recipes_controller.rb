@@ -1,12 +1,19 @@
 class RecipesController < ApplicationController
   before_action :set_recipe, only: [:show, :edit, :update, :destroy, :like]
-  before_action :require_user, except: [:index, :show, :like]
+  before_action :require_user, except: [:index, :index_by_likes, :index_by_chefs, :show, :like]
   before_action :require_same_user, only: [:edit, :update, :destroy]
   before_action :require_like_login, only: [:like]
 
   def index
     @recipes = Recipe.paginate(page: params[:page], per_page: 5)
-    @recipes_likes = Recipe.all.sort_by{|likes| likes.thumbs_up_sum}.reverse.paginate(page: params[:page], per_page: 5)
+  end
+
+  def index_by_likes
+    @recipes = Recipe.all.sort_by{|likes| likes.thumbs_up_sum}.reverse.paginate(page: params[:page], per_page: 5)
+  end
+
+  def index_by_chefs
+    @recipes = Recipe.all.sort_by(&:chef_id).paginate(page: params[:page], per_page: 5)
   end
 
   def show

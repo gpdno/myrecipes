@@ -9,20 +9,20 @@
 <div align="center">
   <div class="col-lg-4">
     <img class="img-circle" src="https://s3.amazonaws.com/myrecipies/assets/2.jpg" alt="Generic placeholder image" width="140" height="140">
-    <h2><%= Recipe.first.name %></h2>
-    <p><%= Recipe.first.description %></p>
+    <h2><%= @recipe.first.name %></h2>
+    <p><%= @recipe.first.description %></p>
     <p><%= link_to raw('View details &raquo;'), recipes_path, class: "btn btn-default" %></p>
   </div><!-- /.col-lg-4 -->
   <div class="col-lg-4">
     <img class="img-circle" src="https://s3.amazonaws.com/myrecipies/assets/4.jpg" alt="Generic placeholder image" width="140" height="140">
-    <h2><%= Recipe.second.name %></h2>
-    <p><%= Recipe.second.description %></p>
+    <h2><%= @recipe.second.name %></h2>
+    <p><%= @recipe.second.description %></p>
     <p><%= link_to raw('View details &raquo;'), recipes_path, class: "btn btn-default" %></p>
   </div><!-- /.col-lg-4 -->
   <div class="col-lg-4">
     <img class="img-circle" src="https://s3.amazonaws.com/myrecipies/assets/5.jpg" alt="Generic placeholder image" width="140" height="140">
-    <h2><%= Recipe.third.name %></h2>
-    <p><%= Recipe.third.description %></p>
+    <h2><%= @recipe.third.name %></h2>
+    <p><%= @recipe.third.description %></p>
     <p><%= link_to raw('View details &raquo;'), recipes_path, class: "btn btn-default" %></p>
   </div><!-- /.col-lg-4 -->
   </div>

@@ -14,6 +14,9 @@ Rails.application.routes.draw do
     end
   end
 
+  get '/recipes_by_likes', to: 'recipes#index_by_likes'
+  get '/recipes_by_chefs', to: 'recipes#index_by_chefs'
+
   get 'signup', to: 'chefs#new'
   resources :chefs, except: [:new]
 
