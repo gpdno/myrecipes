@@ -11,6 +11,8 @@ class Recipe < ApplicationRecord
   has_many :comments, dependent: :destroy
   has_many :likes, dependent: :destroy
 
+  mount_uploader :recipeimage, RecipeUploader
+
   def thumbs_up_sum
     self.likes.where(like: true).size
   end

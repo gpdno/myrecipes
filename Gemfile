@@ -35,8 +35,16 @@ gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
 
+gem 'awesome_print', '~> 1.7'
+gem 'font-awesome-rails', '~> 4.7', '>= 4.7.0.1'
+
 gem 'will_paginate', '3.1.0'
 gem 'bootstrap-will_paginate', '0.0.10'
+
+gem 'carrierwave', '~> 1.0'
+gem 'mini_magick', '~> 4.6', '>= 4.6.1'
+gem 'carrierwave-aws', '~> 1.1'
+gem 'dotenv-rails', '~> 2.2'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development

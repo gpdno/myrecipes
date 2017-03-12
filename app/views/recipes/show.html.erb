@@ -1,7 +1,7 @@
 <%= render 'shared/page_title', title: @recipe.name %>
 
 <div class="well col-md-8 col-md-offset-2">
-  <h4 class="center description"><strong>Steps: </strong></h4>
+  <h4 class="center description"><strong>Description: </strong></h4>
   <hr />
   <%= simple_format(@recipe.description) %>
   <hr />
@@ -9,7 +9,9 @@
     <p>Ingredients: <%= render @recipe.ingredients %></p>
   <% end %>
   <hr />
+  <h4 class="center description"><strong>Steps: </strong></h4>
   <%= simple_format(@recipe.steps) %>
+  <%= image_tag @recipe.recipeimage, width: '100%' %>
   <div class="pull-right">
     <p class="center">
       <em>Created by:</em>
