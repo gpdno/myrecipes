@@ -5,19 +5,15 @@
 </div>
 
       <!-- Three columns of text below the jumbotron -->
-<div class="col-lg-4 center">
-  <%= image_tag @recipes.first.recipeimage, class: "img-circle", width: '140', height: '140' %>
-  <h2><%= link_to @recipes.first.name, recipe_path(@recipes.first) %></h2>
-  <p><%= @recipes.first.description %></p>
-</div><!-- /.col-lg-4 -->
-<div class="col-lg-4 center">
-  <%= image_tag @recipes.second.recipeimage, class: "img-circle", width: '140', height: '140' %>
-  <h2><%= link_to @recipes.second.name, recipe_path(@recipes.second) %></h2>
-  <p><%= @recipes.second.description %></p>
-</div><!-- /.col-lg-4 -->
-<div class="col-lg-4 center">
-<%= image_tag @recipes.third.recipeimage, class: "img-circle", width: '140', height: '140' %>
-  <h2><%= link_to @recipes.third.name, recipe_path(@recipes.third) %></h2>
-  <p><%= @recipes.third.description %></p>
-</div><!-- /.col-lg-4 -->
+<div class="row">
+  <div align="center">
+    <% @recipes.each do |recipe| %>
+      <div class="col-lg-4">
+        <%= image_tag recipe.recipeimage, class: "img-circle", width: '140', height: '140' %>
+        <h2><%= link_to recipe.name, recipe_path(recipe) %></h2>
+        <p><%= recipe.description %></p>
+      </div><!-- /.col-lg-4 -->
+    <% end %>
+  </div>
+</div><!-- /.row -->
 
