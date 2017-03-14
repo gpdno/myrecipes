@@ -9,11 +9,11 @@ class RecipesController < ApplicationController
   end
 
   def index_by_likes
-    @recipes = Recipe.all.sort_by{|likes| likes.thumbs_up_sum}.reverse.paginate(page: params[:page], per_page: 5)
+    @recipes = Recipe.by_likes.paginate(page: params[:page], per_page: 5)
   end
 
   def index_by_chefs
-    @recipes = Recipe.all.sort_by(&:chef_id).paginate(page: params[:page], per_page: 5)
+    @recipes = Recipe.by_chefs.paginate(page: params[:page], per_page: 5)
   end
 
   def show

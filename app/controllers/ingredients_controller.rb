@@ -1,6 +1,6 @@
 class IngredientsController < ApplicationController
   before_action :set_ingredient, only: [:edit, :update, :show, :destroy]
-  before_action :require_admin, except: [:show, :index, :new, :create]
+  before_action :require_admin, except: [:show, :index, :index_by_common, :new, :create]
   
   def new
     @ingredient = Ingredient.new
@@ -33,8 +33,12 @@ class IngredientsController < ApplicationController
     @ingredient_recipes = @ingredient.recipes.paginate(page: params[:page], per_page: 5)
   end
   
+  def index_by_common
+    @ingredients = Ingredient.joins(:recipes).group("ingredients.id").order("count(recipes.id) DESC").paginate(page: params[:page], per_page: 5)
+  end
+
   def index
-    @ingredients = Ingredient.paginate(page: params[:page], per_page: 5)
+    @ingredients = Ingredient.order(name: :asc).paginate(page: params[:page], per_page: 5)
   end
 
   def destroy

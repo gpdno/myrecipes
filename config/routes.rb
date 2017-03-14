@@ -26,6 +26,8 @@ Rails.application.routes.draw do
 
   resources :ingredients
 
+  get 'ingredients_by_common', to: 'ingredients#index_by_common'
+
   get '/chat', to: 'chatrooms#show'
 
   resources :messages, only: [:create]

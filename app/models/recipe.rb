@@ -21,4 +21,13 @@ class Recipe < ApplicationRecord
     self.likes.where(like: false).size    
   end
 
+  def self.by_likes
+    all.sort_by{|likes| likes.thumbs_up_sum}.reverse
+  end
+
+  def self.by_chefs
+    all.sort_by(&:chef_id)
+  end
+
+
 end

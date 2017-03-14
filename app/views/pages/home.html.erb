@@ -1,7 +1,9 @@
 <div class="jumbotron center">
   <h1>Our Family Recipies Book</h1>
   <h2>The best family recipe sharing app</h2>
-  <%= link_to "Sign up", signup_path, class: "btn btn-warning btn-lg" %>
+  <% if !logged_in? %>
+    <%= link_to "Sign up", signup_path, class: "btn btn-warning btn-lg" %>
+  <% end %>
 </div>
 
       <!-- Three columns of text below the jumbotron -->
