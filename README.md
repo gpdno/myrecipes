@@ -1,24 +1,46 @@
-# README
+# Our Family Recipes App
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This app was developed as a class exersise for Udemy's The Complete Ruby on Rails Developer Course by Mashrur Hossain.  It was selected as the Student App of the Month.
 
-Things you may want to cover:
+## Features
 
-* Ruby version
+- User authentications
+- Image uploads to AWS
+- Custom sorting
+- Realtime chatting
+- Bootstrap styling
 
-* System dependencies
+### Data Structure
 
-* Configuration
+#### Chef
+- chefname:string
+- email:email
+- admin:boolean
 
-* Database creation
+### Recipe
+- name:string
+- description:text
+- steps:text
+- recipeimage:text
+- chef_id:integer
 
-* Database initialization
+### Ingredient
+- name:string
 
-* How to run the test suite
+### recipe_ingredients
+- recipe_id:integer
+- ingredient_id:integer
 
-* Services (job queues, cache servers, search engines, etc.)
+### Comment
+- description:text
+- chef_id:integer
+- recipe_id:integer
 
-* Deployment instructions
+### Like
+- like:boolean
+- recipe_id:integer
+- chef_id:integer
 
-* ...
+### Message
+- content:text
+- chef_id:integer
